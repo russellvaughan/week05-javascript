@@ -1,8 +1,10 @@
 
+'use strict';
+
 describe('airportTests', function(){	
 
-var plane = jasmine.createSpy("plane")
-var airport
+var plane = jasmine.createSpy("plane");
+var airport;
 
 beforeEach(function() {
 	airport = new Airport()

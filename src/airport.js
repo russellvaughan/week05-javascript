@@ -1,8 +1,13 @@
-var DEFAULT_CAPACITY = 10
 
-Airport = function(){	
-	this.planes = []
-	this.capacity = DEFAULT_CAPACITY
+'use strict';
+
+
+
+function Airport(){
+	
+	this.planes = [];
+	this.capacity = DEFAULT_CAPACITY;
+
 };
 
 Airport.prototype.isStormy = function() {
@@ -27,8 +32,9 @@ Airport.prototype.depart = function(plane) {
 	var idx = this.planes.indexOf(plane);
 	this.planes.splice(idx, 1)
 
-}
+};
 
 Airport.prototype.setCapacity = function(number) {
 	this.capacity = number
 };
+

@@ -1,8 +1,21 @@
+
+'use strict';
+
+describe('featureTests', function(){	
+
+var airport;
+var plane; 
+
+beforeEach(function() {
+	plane = new Plane();
+	airport = new Airport();
+	
+	// var airport2 = jasmine.createSpyObj("airport2", ["isStormy"]) 
+});
+
+
 describe("landing a plane", function(){
 	it('lands a plane',function(){
-		var plane, airport
-		plane = new Plane()
-		airport = new Airport()
 		spyOn(airport,"isStormy").and.returnValue(false)
 		airport.land(plane)
 		expect(airport.planes).toContain(plane)
@@ -11,9 +24,7 @@ describe("landing a plane", function(){
 });
 
 describe("depart a plane", function(){
-	it('takes off a plane', function(){
-		var plane = new Plane()
-		var airport = new Airport()
+	it('depart off a plane', function(){
 		spyOn(airport,"isStormy").and.returnValue(false)
 		airport.land(plane)
 		airport.depart(plane)
@@ -24,8 +35,6 @@ describe("depart a plane", function(){
 
 describe("prevents a plane from landing when stormy", function(){
 	it(" ", function(){
-		var plane = new Plane()
-		var airport = new Airport()
 		expect(function(){
 			airport.land(plane)}).toThrow("unsafe flying conditions")
 
@@ -34,8 +43,6 @@ describe("prevents a plane from landing when stormy", function(){
 });
 describe("prevents a plane from departing when stormy", function(){
 	it("stops planes from landing", function(){
-		var plane = new Plane()
-		var airport = new Airport()
 		spyOn(airport,"isStormy").and.returnValue(false)
 		airport.land(plane)
 		airport.isStormy.and.returnValue(true)
@@ -47,8 +54,6 @@ describe("prevents a plane from departing when stormy", function(){
 
 describe("when an airport is full, it prevents landing", function(){
 	it("prevents a plane from landing",function(){
-		var plane = new Plane()
-		var airport = new Airport()
 		spyOn(airport,"isStormy").and.returnValue(false)
 		var capacity = DEFAULT_CAPACITY;
 		for (var i = 0; i < capacity; i++) {
@@ -83,6 +88,7 @@ describe("when planes are not in airport, it prevents departure", function(){
 
 });
 
+});
 
 
 

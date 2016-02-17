@@ -1,3 +1,4 @@
-Plane = function(){
-	
-};
+
+'use strict';
+
+function Plane(){}
