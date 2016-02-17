@@ -5,6 +5,7 @@ function Thermostat(){
   this.temperature = DEFAULT_TEMP;
   this.maxTemp = 25;
   this.powerMode = 'on';
+  this.displayColor = this.currentColor()
 };
 
 Thermostat.prototype.upButton = function(){
@@ -31,5 +32,13 @@ Thermostat.prototype.powerSavingOff = function(){
   this.maxTemp = 32;
 };
 
+Thermostat.prototype.resetButton = function() {
+  this.temperature = DEFAULT_TEMP;
+};
 
+Thermostat.prototype.currentColor = function() {
+  // if (this.temperature >= 18) && (this.temperature < 25) {
+    return 'yellow'
+  // }
 
+};
