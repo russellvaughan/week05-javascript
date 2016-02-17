@@ -93,7 +93,8 @@ describe('Thermostat', function(){
       for (var i = 1; i <= 3; i++) {
         thermostat.downButton();
       }; 
-      expect(thermostat.currentColor()).toEqual('green')
+      console.log("spec file test green, temp should be 17 and is:" + thermostat.temperature)
+      expect(thermostat.displayColor).toEqual('green')
     });
   });
 
@@ -103,7 +104,8 @@ describe('Thermostat', function(){
       for (var i = 1; i <= 7; i++) {
         thermostat.upButton();
       }; 
-      expect(thermostat.currentColor()).toEqual('red')
+      console.log("spec file test red, temp should be 27 and is:" + thermostat.temperature)
+      expect(thermostat.displayColor).toEqual('red')
     });
   });
 

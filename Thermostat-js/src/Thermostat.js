@@ -37,16 +37,18 @@ Thermostat.prototype.resetButton = function() {
 };
 
 Thermostat.prototype.currentColor = function() {
-  console.log("test" + this.temperature)
+  console.log("src file test yellow, temp should be 20 and is:" + this.temperature)
+  console.log("src file test green, temp should be 17 and is:" + this.temperature)
+  console.log("src file test red, temp should be 27 and is:" + this.temperature)
   if ((this.temperature >= 18) && (this.temperature < 25)) {
     return 'yellow'
    } 
     else if (this.temperature < 18) {
-    console.log("testgreen" + this.temperature)
    return 'green'
+   
    }
    else {
-    return 'red'
+   return 'red'
    }
 
 
