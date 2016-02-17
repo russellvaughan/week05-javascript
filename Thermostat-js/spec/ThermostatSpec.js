@@ -81,11 +81,31 @@ describe('Thermostat', function(){
   });
 
 
-  describe('color display', function(){});
-  it('is yellow between 18-24 dC',function(){
-    expect(thermostat.displayColor).toEqual('yellow')
+  describe('color display', function(){
+    it('is yellow between 18-24 dC',function(){
+      expect(thermostat.displayColor).toEqual('yellow')
+    });
   });
 
+
+  describe('color display', function(){
+    it('is green for less than 18 dC',function(){
+      for (var i = 1; i <= 3; i++) {
+        thermostat.downButton();
+      }; 
+      expect(thermostat.currentColor()).toEqual('green')
+    });
+  });
+
+  describe('color display', function(){
+    it('is red for greater than 25 dC',function(){
+      thermostat.powerSavingOff()
+      for (var i = 1; i <= 7; i++) {
+        thermostat.upButton();
+      }; 
+      expect(thermostat.currentColor()).toEqual('red')
+    });
+  });
 
 });
 

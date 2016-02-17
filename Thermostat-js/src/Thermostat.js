@@ -37,8 +37,19 @@ Thermostat.prototype.resetButton = function() {
 };
 
 Thermostat.prototype.currentColor = function() {
-  // if (this.temperature >= 18) && (this.temperature < 25) {
+  console.log("test" + this.temperature)
+  if ((this.temperature >= 18) && (this.temperature < 25)) {
     return 'yellow'
-  // }
+   } 
+    else if (this.temperature < 18) {
+    console.log("testgreen" + this.temperature)
+   return 'green'
+   }
+   else {
+    return 'red'
+   }
+
+
+
 
 };
