@@ -31,6 +31,7 @@ beforeEach(function() {
 
 	describe("prevents a plane from landing when stormy", function(){
 		it("prevents a plane from landing", function(){
+			spyOn(airport,"isStormy").and.returnValue(true)
 			expect(function(){
 				airport.land(plane)}).toThrow("unsafe flying conditions")
 

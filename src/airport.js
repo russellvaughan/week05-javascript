@@ -1,7 +1,7 @@
 
 'use strict';
 
-
+var DEFAULT_CAPACITY = 10
 
 function Airport(){
 	
@@ -11,7 +11,8 @@ function Airport(){
 };
 
 Airport.prototype.isStormy = function() {
-	return true
+	var weather = new Weather
+	return weather.forecast()
 };
 
 Airport.prototype.land = function(plane) {
